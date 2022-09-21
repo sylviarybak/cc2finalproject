@@ -96,10 +96,14 @@ void ofApp::draw() {
 	}
 
 
-	//apparently this doesnt work when it is nested inside of another function, so I had to keep all the buttons here
+	//apparently this doesnt work when it is nested inside of another function from a mousePressed, so I had to keep all the buttons here
 	if (photoButtonClick) {
 
-		ofBackground(255);
+		ofBackground(255); // temporary input
+
+		// return robot image then run randomizer again
+
+
 	}
 
 	if (continueClicked) {
