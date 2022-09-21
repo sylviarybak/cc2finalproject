@@ -62,7 +62,7 @@ void ofApp::draw() {
 
 	smallFont.drawString(iAmNot, ofGetWidth() / 2.6, ofGetHeight() / 2 - 2);
 
-
+	//fills in checkbox and modifies the text 
 	if ((mouseX > checkbox.x && mouseX < checkbox.x + checkbox.width) && (mouseY > checkbox.y && mouseY < checkbox.y + checkbox.height)) {
 		//I'm over a rectangle  
 		ofFill();
@@ -77,6 +77,7 @@ void ofApp::draw() {
 
 	}
 
+	//if checkbox is clicked then it moves on to the next screen
 	if (checkboxClicked) {
 
 		ofBackground(0);
@@ -95,8 +96,15 @@ void ofApp::draw() {
 
 	}
 
+	//Continue button
+	if (continueClicked) {
+
+		runRandomizer.draw();
+	}
+
 
 	//apparently this doesnt work when it is nested inside of another function from a mousePressed, so I had to keep all the buttons here
+	//when camera button is pressed under the camera input from ImageInput 
 	if (photoButtonClick) {
 
 		ofBackground(255); // temporary input
@@ -106,10 +114,6 @@ void ofApp::draw() {
 
 	}
 
-	if (continueClicked) {
-
-		runRandomizer.draw();
-	}
 }
 
 
