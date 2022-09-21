@@ -20,12 +20,15 @@ void ofApp::setup(){
 
 	
 	ContinueBox.set(ofGetWidth() / 2 - 70, ofGetHeight() / 2 - 10, 140, 50);
-	randomNr = ofRandom(4);
+	
 
 
 	buttonRect.set(ofGetWidth() / 2 - 25, ofGetHeight() - 100, 50, 50);
 
+
 	runRandomizer.setup();
+
+	
 
 	
 }
@@ -93,23 +96,16 @@ void ofApp::draw() {
 	}
 
 
-	//apparently this doesnt work when it is nested inside of another function, so I had to keep all the buttons outside
+	//apparently this doesnt work when it is nested inside of another function, so I had to keep all the buttons here
 	if (photoButtonClick) {
 
 		ofBackground(255);
 	}
 
-
 	if (continueClicked) {
-
 
 		runRandomizer.draw();
 	}
-
-
-
-
-
 }
 
 
@@ -154,6 +150,8 @@ void ofApp::mousePressed(int x, int y, int button){
 	checkboxClicked = checkbox.inside(x, y);
 
 	continueClicked = ContinueBox.inside(x, y);
+
+	
 
 
 }

@@ -53,7 +53,7 @@ void ImageInput::update() {
 
 void ImageInput::draw() {
 	
-
+	cout << "the video is running";
 
 	ofBackground(0);
 
