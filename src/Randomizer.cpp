@@ -21,7 +21,7 @@ void Randomizer::update() {
 
 void Randomizer::draw() {
 
-	// this runs in the draw but then it runs every frame which is not cool, if i move it out to setup or smth, the camera input doesnt work, nor will any other draws
+	// this runs from the the draw of the ofApp but then it runs every frame which is not cool, if i move it out to setup or smth, the camera input doesnt work, nor will any other things that need to run every frame 
 
 	// float rounded = 3.0; // set to this so that i can test the camera input
 	randomNums.push_back(5.0); //apparently i have to push something into the vector first for it to even work
