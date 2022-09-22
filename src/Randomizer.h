@@ -15,19 +15,19 @@ public: // place public functions or variables declarations here
 	void draw();
 	void setup();
 	void update();
+	void randomNum();
 
 	Captcha runCaptcha;
 	AudioInput runAudioInput;
 	ImageInput runImageInput;
 	TuringQuestion runTuringQuestion;
 
-	ofTrueTypeFont smallFont;
+	int option;
 
 	vector<float> randomNums;
 
-	float randomNr;
+	float rounded;
 
-	void vectorCheck(); 
 
 	Randomizer();  // constructor - used to initialize an object, if no properties are passed the program sets them to the default value
 	~Randomizer();

@@ -18,19 +18,27 @@ void Randomizer::update() {
 
 }
 
+void Randomizer::randomNum() {
+
+
+	rounded = 3.0; // set to this so that i can test the camera input
+	randomNums.push_back(5.0); //apparently i have to push something into the vector first for it to even work
+
+
+	// randomNr = ofRandom(4);
+
+	// float rounded = roundf(randomNr); //this inputs the random number
+
+
+}
+
+
 
 void Randomizer::draw() {
 
-	// this runs from the the draw of the ofApp but then it runs every frame which is not cool, if i move it out to setup or smth, the camera input doesnt work, nor will any other things that need to run every frame 
 
-	// float rounded = 3.0; // set to this so that i can test the camera input
-	randomNums.push_back(5.0); //apparently i have to push something into the vector first for it to even work
 
-	randomNr = ofRandom(4);
-
-	float rounded = roundf(randomNr); //this inputs the random number
-
-	
+	// TO DO : PASS RESULT OF THE RANDOMNUM FUNCTION INTO THE IF STATEMENT
 
 	if (rounded == 1) {
 
@@ -88,7 +96,9 @@ void Randomizer::draw() {
 
 			cout << "Video input should play now";
 
-			runImageInput.draw(); // runs the video input
+			runImageInput.draw();
+
+		//	runImageInput.draw(); // runs the video input
 
 		
 
@@ -132,7 +142,6 @@ void Randomizer::draw() {
 
 	
 	}
-
 
 
 

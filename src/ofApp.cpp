@@ -96,11 +96,9 @@ void ofApp::draw() {
 
 	}
 
-	//Continue button
-	if (continueClicked) {
 
-		runRandomizer.draw();
-	}
+
+
 
 
 	//apparently this doesnt work when it is nested inside of another function from a mousePressed, so I had to keep all the buttons here
@@ -113,6 +111,13 @@ void ofApp::draw() {
 
 
 	}
+
+
+	if (continueClicked) {
+
+		runRandomizer.draw();
+	}
+
 
 }
 
@@ -159,7 +164,7 @@ void ofApp::mousePressed(int x, int y, int button){
 
 	continueClicked = ContinueBox.inside(x, y);
 
-	
+
 
 
 }

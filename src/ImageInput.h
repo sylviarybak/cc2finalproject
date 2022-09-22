@@ -12,9 +12,6 @@ public: // place public functions or variables declarations here
 	void update();
 	void mousePressed(int x, int y, int button);
 
-	ofRectangle test;
-
-
 	string uploadImage;
 
 	ofTrueTypeFont smallFont;
