@@ -29,7 +29,8 @@ void Randomizer::randomNum() {
 
 	// float rounded = roundf(randomNr); //this inputs the random number
 
-
+	// TO DO : CHANGE FROM VOID TO FLOAT OR INT
+	// RETURN VALUE
 }
 
 
@@ -38,7 +39,7 @@ void Randomizer::draw() {
 
 
 
-	// TO DO : PASS RESULT OF THE RANDOMNUM FUNCTION INTO THE IF STATEMENT
+	// TO DO : PASS RETURN OF THE RANDOMNUM FUNCTION INTO THE IF STATEMENT
 
 	if (rounded == 1) {
 
