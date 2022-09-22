@@ -24,13 +24,13 @@ void Randomizer::randomNum() {
 	rounded = 3.0; // set to this so that i can test the camera input
 	randomNums.push_back(5.0); //apparently i have to push something into the vector first for it to even work
 
-
-	// randomNr = ofRandom(4);
+	// float randomFunction() {
+	// return = ofRandom(4);
+	}
 
 	// float rounded = roundf(randomNr); //this inputs the random number
-
-	// TO DO : CHANGE FROM VOID TO FLOAT OR INT
-	// RETURN VALUE
+	
+	
 }
 
 
