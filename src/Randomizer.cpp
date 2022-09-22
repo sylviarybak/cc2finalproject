@@ -7,7 +7,7 @@ Randomizer::Randomizer(){
 void Randomizer::setup(){
 
 	runImageInput.setup(); // i have to run this here as well apparently
-
+	randomNums.push_back(5.0); //apparently i have to push something into the vector first for it to even work
 
 }
 
@@ -18,30 +18,21 @@ void Randomizer::update() {
 
 }
 
-void Randomizer::randomNum() {
+float Randomizer::randomNum() {
 
 
-	rounded = 3.0; // set to this so that i can test the camera input
-	randomNums.push_back(5.0); //apparently i have to push something into the vector first for it to even work
+	//rounded = 3.0; // set to this so that i can test the camera input
 
-	// float randomFunction() {
-	// return = ofRandom(4);
-	}
-
-	// float rounded = roundf(randomNr); //this inputs the random number
+	return roundf(ofRandom(4)); //this inputs the random number
 	
 	
 }
 
 
-
 void Randomizer::draw() {
 
 
-
-	// TO DO : PASS RETURN OF THE RANDOMNUM FUNCTION INTO THE IF STATEMENT
-
-	if (rounded == 1) {
+	if (randomNum() == 1) {
 
 
 		if (std::count(randomNums.begin(), randomNums.end(), 1.0)) { // checks if its in the vector 
@@ -56,13 +47,13 @@ void Randomizer::draw() {
 			cout << "got 1";
 
 			runCaptcha.draw();
-			randomNums.push_back(rounded);
+			randomNums.push_back(randomNum());
 
 		}
 
 	}
 
-	else if (rounded == 2) {
+	else if (randomNum() == 2) {
 
 		if (std::count(randomNums.begin(), randomNums.end(), 2.0)) { // checks if its in the vector 
 
@@ -75,14 +66,14 @@ void Randomizer::draw() {
 
 			cout << "got 2";
 			runAudioInput.draw();
-			randomNums.push_back(rounded);
+			randomNums.push_back(randomNum());
 
 		}
 
 
 	}
 
-	else if (rounded == 3) {
+	else if (randomNum() == 3) {
 
 		//for (int i = 0; i < randomNums.size(); i++) { 
 
@@ -99,16 +90,14 @@ void Randomizer::draw() {
 
 			runImageInput.draw();
 
-		//	runImageInput.draw(); // runs the video input
-
-		
+			randomNums.push_back(randomNum());
 
 
 		}
 		//}
 
 	}
-	else if (rounded == 4) {
+	else if (randomNum() == 4) {
 
 		if (std::count(randomNums.begin(), randomNums.end(), 4.0)) { // checks if its in the vector 
 
@@ -123,7 +112,7 @@ void Randomizer::draw() {
 
 			cout << "got 4";
 			runTuringQuestion.draw();
-			randomNums.push_back(rounded);
+			randomNums.push_back(randomNum());
 
 
 
