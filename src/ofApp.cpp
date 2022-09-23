@@ -113,11 +113,8 @@ void ofApp::draw() {
 	}
 
 
-	if (continueClicked) {
-
-		runRandomizer.draw();
-	}
-
+	runRandomizer.draw();
+	
 
 }
 
@@ -165,7 +162,12 @@ void ofApp::mousePressed(int x, int y, int button){
 	continueClicked = ContinueBox.inside(x, y);
 
 
+	if (continueClicked) {
 
+		runRandomizer.runSelection();
+
+		
+	}
 
 }
 

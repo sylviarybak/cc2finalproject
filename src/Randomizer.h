@@ -15,7 +15,9 @@ public: // place public functions or variables declarations here
 	void draw();
 	void setup();
 	void update();
+	void options();
 	float randomNum();
+	float runSelection();
 	
 
 	Captcha runCaptcha;

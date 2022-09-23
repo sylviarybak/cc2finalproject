@@ -25,110 +25,84 @@ float Randomizer::randomNum() {
 
 	return roundf(ofRandom(4)); //this inputs the random number
 	
+
 	
 }
 
-
-void Randomizer::draw() {
-
-
-	if (randomNum() == 1) {
+float Randomizer::runSelection() {
 
 
-		if (std::count(randomNums.begin(), randomNums.end(), 1.0)) { // checks if its in the vector 
+	if (randomNum() == 0) {
 
 
-			cout << "We already had this one!";
+		//if (std::count(randomNums.begin(), randomNums.end(), 0.0)) { // checks if its in the vector
 
-
-		}
-		else {
-
-			cout << "got 1";
-
-			runCaptcha.draw();
 			randomNums.push_back(randomNum());
+			return 0;
 
-		}
+		//}
+
+
+	}
+
+	else if (randomNum() == 1) {
+		
+		randomNums.push_back(randomNum());
+		return 1;
+
 
 	}
 
 	else if (randomNum() == 2) {
 
-		if (std::count(randomNums.begin(), randomNums.end(), 2.0)) { // checks if its in the vector 
-
-
-			cout << "We already had this one!";
-
-
-		}
-		else {
-
-			cout << "got 2";
-			runAudioInput.draw();
-			randomNums.push_back(randomNum());
-
-		}
-
-
-	}
-
-	else if (randomNum() == 3) {
-
 		//for (int i = 0; i < randomNums.size(); i++) { 
-
-		if (std::count(randomNums.begin(), randomNums.end(), 3.0)) { // checks if its in the vector 
-
-
-			cout << "We already had this one!";
-
-
-		}
-		else {
-
-			cout << "Video input should play now";
-
-			runImageInput.draw();
-
-			randomNums.push_back(randomNum());
-
-
-		}
+		randomNums.push_back(randomNum());
+		return 2;
 		//}
 
 	}
-	else if (randomNum() == 4) {
+	else if (randomNum() == 3) {
 
-		if (std::count(randomNums.begin(), randomNums.end(), 4.0)) { // checks if its in the vector 
-
-
-			cout << "We already had this one!";
-
-
-		}
-		else {
-
-			cout << "Video input should play now";
-
-			cout << "got 4";
-			runTuringQuestion.draw();
-			randomNums.push_back(randomNum());
-
-
-
-
-		}
+		randomNums.push_back(randomNum());
+		return 3;
 
 
 	}
 
 	else {
 
-		cout << "ok, done no more";
+		randomNums.push_back(randomNum());
+		return 4;
 
 	}
 
 
+}
+
+
+void Randomizer::draw() {
+
+
+
+	if (runSelection() == 0) {
+
+		runCaptcha.draw();
+	}
+
+	else if (runSelection() == 1) {
+
+		runImageInput.draw();
+	}
+
+	else if (runSelection() == 2) {
+
+		runAudioInput.draw();
+	}
+
+	else if (runSelection() == 3) {
+
+		runTuringQuestion.draw();
+	}
 
 	
 	}
