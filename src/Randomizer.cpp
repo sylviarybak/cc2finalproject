@@ -33,21 +33,13 @@ float Randomizer::runSelection() {
 
 
 	if (randomNum() == 0) {
-
-
-		//if (std::count(randomNums.begin(), randomNums.end(), 0.0)) { // checks if its in the vector
-
-			randomNums.push_back(randomNum());
+			
 			return 0;
-
-		//}
-
-
 	}
 
 	else if (randomNum() == 1) {
 		
-		randomNums.push_back(randomNum());
+	
 		return 1;
 
 
@@ -55,26 +47,18 @@ float Randomizer::runSelection() {
 
 	else if (randomNum() == 2) {
 
-		//for (int i = 0; i < randomNums.size(); i++) { 
-		randomNums.push_back(randomNum());
 		return 2;
-		//}
+	
 
 	}
 	else if (randomNum() == 3) {
 
-		randomNums.push_back(randomNum());
+	
 		return 3;
 
 
 	}
 
-	else {
-
-		randomNums.push_back(randomNum());
-		return 4;
-
-	}
 
 
 }
@@ -83,8 +67,7 @@ float Randomizer::runSelection() {
 void Randomizer::draw(float runSelector) {
 
 
-
-	if (runSelector== 0) {
+	if (runSelector == 0) {
 
 		runCaptcha.draw();
 	}
@@ -103,6 +86,68 @@ void Randomizer::draw(float runSelector) {
 
 		runTuringQuestion.draw();
 	}
+
+
+	//if (runSelector == 0) {
+
+	//	if (std::count(randomNums.begin(), randomNums.end(), 0.0)) {
+
+	//		cout << "we had this one";
+
+	//	}
+	//	else {
+	//
+	//		runCaptcha.draw();
+	//
+	//		randomNums.push_back(runSelector);
+	//	}
+	//	
+	//}
+
+	//else if (runSelector == 1) {
+
+	//	if (std::count(randomNums.begin(), randomNums.end(), 1.0)) {
+
+	//		cout << "we had this one";
+
+	//	}
+	//	else {
+
+	//		runImageInput.draw();
+	//	
+	//		randomNums.push_back(runSelector);
+	//	}
+	//}
+
+	//else if (runSelector == 2) {
+
+	//	if (std::count(randomNums.begin(), randomNums.end(), 2.0)) {
+
+	//		cout << "we had this one";
+
+	//	}
+	//	else {
+
+	//		runAudioInput.draw();
+
+	//		randomNums.push_back(runSelector);
+	//	}
+	//}
+
+	//else if (runSelector == 3) {
+
+	//	if (std::count(randomNums.begin(), randomNums.end(), 3.0)) {
+
+	//		cout << "we had this one";
+
+	//	}
+	//	else {
+
+	//		runTuringQuestion.draw();
+	//
+	//		randomNums.push_back(runSelector);
+	//	}
+	//}
 
 	//runTuringQuestion.draw();
 	

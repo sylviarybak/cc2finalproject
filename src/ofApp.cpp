@@ -70,13 +70,13 @@ void ofApp::draw() {
 		ofSetColor(0);
 		iAmNot = "I am not a human";
 
-		runRandomizer.draw(randomNr);
+		
 
 	}
 
 	else {
 		iAmNot = "I am not a robot";
-		randomNr = runRandomizer.runSelection();
+		
 
 	}
 
@@ -101,6 +101,18 @@ void ofApp::draw() {
 
 
 
+	if (continueClicked) {
+
+
+		runRandomizer.draw(randomNr);
+
+	}
+
+	else {
+
+		randomNr = runRandomizer.runSelection();
+
+	}
 
 
 
@@ -163,13 +175,6 @@ void ofApp::mousePressed(int x, int y, int button){
 
 	continueClicked = ContinueBox.inside(x, y);
 
-
-	if (continueClicked) {
-
-		runRandomizer.runSelection();
-
-		
-	}
 
 }
 
