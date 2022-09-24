@@ -7,7 +7,7 @@ Randomizer::Randomizer(){
 void Randomizer::setup(){
 
 	runImageInput.setup(); // i have to run this here as well apparently
-	randomNums.push_back(5.0); //apparently i have to push something into the vector first for it to even work
+	randomNums.push_back(5.0);
 
 }
 
@@ -63,94 +63,113 @@ float Randomizer::runSelection() {
 
 }
 
+void Randomizer::vectorCheck(float runSelector)
+{
 
-void Randomizer::draw(float runSelector) {
 
 
 	if (runSelector == 0) {
 
-		runCaptcha.draw();
+		if (std::count(randomNums.begin(), randomNums.end(), 0.0) > 0) {
+
+			cout << "we had this one";
+
+		}
+		else {
+
+			drawSelector = 0;
+
+			randomNums.push_back(runSelector);
+
+			cout << "zero";
+		}
+
 	}
 
 	else if (runSelector == 1) {
 
-		runImageInput.draw();
+		if (std::count(randomNums.begin(), randomNums.end(), 1.0) > 0) {
+
+			cout << "we had this one";
+
+		}
+		else {
+
+			drawSelector = 1;
+
+			randomNums.push_back(runSelector);
+
+			cout << "one";
+		}
 	}
 
 	else if (runSelector == 2) {
 
-		runAudioInput.draw();
+		if (std::count(randomNums.begin(), randomNums.end(), 2.0) > 0) {
+
+			cout << "we had this one";
+
+
+
+		}
+		else {
+
+			drawSelector = 2;
+
+			randomNums.push_back(runSelector);
+
+			cout << "two";
+		}
 	}
 
 	else if (runSelector == 3) {
 
-		runTuringQuestion.draw();
+		if (std::count(randomNums.begin(), randomNums.end(), 3.0) > 0) {
+
+			cout << "we had this one";
+
+		}
+		else {
+
+			drawSelector = 3;
+
+			randomNums.push_back(runSelector);
+
+			cout << "three";
+		}
 	}
 
 
-	//if (runSelector == 0) {
 
-	//	if (std::count(randomNums.begin(), randomNums.end(), 0.0)) {
+}
 
-	//		cout << "we had this one";
 
-	//	}
-	//	else {
-	//
-	//		runCaptcha.draw();
-	//
-	//		randomNums.push_back(runSelector);
-	//	}
-	//	
-	//}
 
-	//else if (runSelector == 1) {
+void Randomizer::draw() {
 
-	//	if (std::count(randomNums.begin(), randomNums.end(), 1.0)) {
 
-	//		cout << "we had this one";
+	if (drawSelector == 0) {
 
-	//	}
-	//	else {
+	runCaptcha.draw();
+	}
 
-	//		runImageInput.draw();
-	//	
-	//		randomNums.push_back(runSelector);
-	//	}
-	//}
+	else if (drawSelector == 1) {
 
-	//else if (runSelector == 2) {
+	runImageInput.draw();
+	}
 
-	//	if (std::count(randomNums.begin(), randomNums.end(), 2.0)) {
+	else if (drawSelector == 2) {
 
-	//		cout << "we had this one";
+	runAudioInput.draw();
+	}
 
-	//	}
-	//	else {
+	else if (drawSelector == 3) {
 
-	//		runAudioInput.draw();
+	runTuringQuestion.draw();
+	}
 
-	//		randomNums.push_back(runSelector);
-	//	}
-	//}
 
-	//else if (runSelector == 3) {
 
-	//	if (std::count(randomNums.begin(), randomNums.end(), 3.0)) {
-
-	//		cout << "we had this one";
-
-	//	}
-	//	else {
-
-	//		runTuringQuestion.draw();
-	//
-	//		randomNums.push_back(runSelector);
-	//	}
-	//}
-
-	//runTuringQuestion.draw();
-	
 }
 
 

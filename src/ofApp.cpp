@@ -103,8 +103,14 @@ void ofApp::draw() {
 
 	if (continueClicked) {
 
+		if (oneTimeOnly == true) {
+			runRandomizer.vectorCheck(randomNr);
 
-		runRandomizer.draw(randomNr);
+		oneTimeOnly = false;
+		}
+
+		runRandomizer.draw();
+		
 
 	}
 
@@ -114,18 +120,21 @@ void ofApp::draw() {
 
 	}
 
-
-
-	//apparently this doesnt work when it is nested inside of another function from a mousePressed, so I had to keep all the buttons here
-	//when camera button is pressed under the camera input from ImageInput 
+	
 	if (photoButtonClick) {
 
-		ofBackground(255); // temporary input
+		oneTimeOnly = true;
+	}
 
-		// return robot image then run randomizer again
+	else {
 
 
 	}
+
+
+
+
+	//when camera button is pressed under the camera input from ImageInput 
 
 
 	
@@ -174,6 +183,7 @@ void ofApp::mousePressed(int x, int y, int button){
 	checkboxClicked = checkbox.inside(x, y);
 
 	continueClicked = ContinueBox.inside(x, y);
+
 
 
 }

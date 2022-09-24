@@ -12,10 +12,12 @@ class Randomizer {
 public: // place public functions or variables declarations here
 
 
-	void draw(float runSelector);
+	void draw();
 	void setup();
 	void update();
 	void options();
+	void vectorCheck(float runSelector);
+
 	float randomNum();
 	float runSelection();
 	
@@ -31,7 +33,7 @@ public: // place public functions or variables declarations here
 
 	float rounded;
 
-
+	int drawSelector;
 
 	Randomizer();  // constructor - used to initialize an object, if no properties are passed the program sets them to the default value
 	~Randomizer();
