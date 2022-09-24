@@ -12,7 +12,7 @@ class Randomizer {
 public: // place public functions or variables declarations here
 
 
-	void draw();
+	void draw(float runSelector);
 	void setup();
 	void update();
 	void options();

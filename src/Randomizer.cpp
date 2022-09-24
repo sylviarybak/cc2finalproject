@@ -80,32 +80,33 @@ float Randomizer::runSelection() {
 }
 
 
-void Randomizer::draw() {
+void Randomizer::draw(float runSelector) {
 
 
 
-	if (runSelection() == 0) {
+	if (runSelector== 0) {
 
 		runCaptcha.draw();
 	}
 
-	else if (runSelection() == 1) {
+	else if (runSelector == 1) {
 
 		runImageInput.draw();
 	}
 
-	else if (runSelection() == 2) {
+	else if (runSelector == 2) {
 
 		runAudioInput.draw();
 	}
 
-	else if (runSelection() == 3) {
+	else if (runSelector == 3) {
 
 		runTuringQuestion.draw();
 	}
 
+	//runTuringQuestion.draw();
 	
-	}
+}
 
 
 

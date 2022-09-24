@@ -70,10 +70,13 @@ void ofApp::draw() {
 		ofSetColor(0);
 		iAmNot = "I am not a human";
 
+		runRandomizer.draw(randomNr);
+
 	}
 
 	else {
 		iAmNot = "I am not a robot";
+		randomNr = runRandomizer.runSelection();
 
 	}
 
@@ -113,7 +116,6 @@ void ofApp::draw() {
 	}
 
 
-	runRandomizer.draw();
 	
 
 }
