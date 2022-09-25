@@ -1,1 +1,3 @@
-ofxSvg
+ofxAudioFile
+ofxGui
+ofxSoundObjects

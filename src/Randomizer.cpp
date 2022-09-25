@@ -7,6 +7,9 @@ Randomizer::Randomizer(){
 void Randomizer::setup(){
 
 	runImageInput.setup(); // i have to run this here as well apparently
+	runAudioInput.setup();
+
+
 	randomNums.push_back(5.0);
 
 }
@@ -15,7 +18,7 @@ void Randomizer::setup(){
 void Randomizer::update() {
 
 	runImageInput.update();  // this too
-
+	runAudioInput.update();
 }
 
 float Randomizer::randomNum() {
@@ -147,8 +150,9 @@ void Randomizer::vectorCheck(float runSelector)
 
 void Randomizer::draw() {
 
+	runAudioInput.draw();
 
-	if (drawSelector == 0) {
+	/*if (drawSelector == 0) {
 
 	runCaptcha.draw();
 	}
@@ -167,7 +171,7 @@ void Randomizer::draw() {
 
 	runTuringQuestion.draw();
 	}
-
+*/
 
 
 }
