@@ -6,6 +6,8 @@
 #include "ImageInput.h"
 #include "TuringQuestion.h"
 #include "Randomizer.h"
+#include "AudioOutput.h"
+
 
 
 
@@ -47,6 +49,7 @@ class ofApp : public ofBaseApp{
 		ofRectangle checkbox;
 		ofRectangle checkboxFill; // elements on start screen
 		ofRectangle ContinueBox;
+		ofRectangle doneRec;
 
 		bool checkboxClicked = false;
 
@@ -63,13 +66,19 @@ class ofApp : public ofBaseApp{
 		ImageInput runImageInput;
 		TuringQuestion runTuringQuestion;
 		Randomizer runRandomizer;
+		AudioOutput runAudioOutput;
 
 		bool oneTimeOnly = true;
 
 
 		ofRectangle buttonRect;
+		ofRectangle audioRect;
 		ofImage photoButton;
+
 		bool photoButtonClick = false;
+		bool doneRecClick = false;
+
+		bool Record = false;
 
 		
 

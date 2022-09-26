@@ -7,7 +7,9 @@ Randomizer::Randomizer(){
 void Randomizer::setup(){
 
 	runImageInput.setup(); // i have to run this here as well apparently
+
 	runAudioInput.setup();
+
 
 
 	randomNums.push_back(5.0);
@@ -17,14 +19,16 @@ void Randomizer::setup(){
 
 void Randomizer::update() {
 
+	runAudioInput.update(); // i have to run this here as well apparently
+
+
 	runImageInput.update();  // this too
-	runAudioInput.update();
+
 }
 
 float Randomizer::randomNum() {
 
 
-	//rounded = 3.0; // set to this so that i can test the camera input
 
 	return roundf(ofRandom(4)); //this inputs the random number
 	
@@ -152,26 +156,25 @@ void Randomizer::draw() {
 
 	runAudioInput.draw();
 
-	/*if (drawSelector == 0) {
+	//if (drawSelector == 0) {
 
-	runCaptcha.draw();
-	}
+	//runCaptcha.draw();
+	//}
 
-	else if (drawSelector == 1) {
+	//else if (drawSelector == 1) {
 
-	runImageInput.draw();
-	}
+	//runImageInput.draw();
+	//}
 
-	else if (drawSelector == 2) {
+	//else if (drawSelector == 2) {
 
-	runAudioInput.draw();
-	}
+	//runAudioInput.draw();
+	//}
 
-	else if (drawSelector == 3) {
+	//else if (drawSelector == 3) {
 
-	runTuringQuestion.draw();
-	}
-*/
+	//runTuringQuestion.draw();
+	//}
 
 
 }

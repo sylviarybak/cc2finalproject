@@ -25,6 +25,8 @@ void ofApp::setup(){
 
 	buttonRect.set(ofGetWidth() / 2 - 25, ofGetHeight() - 100, 50, 50);
 
+	doneRec.set(ofGetWidth() / 2 - 25, ofGetHeight() - 150, 80, 50);
+
 
 	runRandomizer.setup();
 
@@ -37,6 +39,7 @@ void ofApp::setup(){
 void ofApp::update(){
 
 	runRandomizer.update();
+	runAudioInput.update();
 
 }
 
@@ -103,10 +106,12 @@ void ofApp::draw() {
 
 	if (continueClicked) {
 
+
 		if (oneTimeOnly == true) {
 			runRandomizer.vectorCheck(randomNr);
 
 		oneTimeOnly = false;
+			
 		}
 
 		runRandomizer.draw();
@@ -131,32 +136,30 @@ void ofApp::draw() {
 
 	}
 
+	if (doneRecClick) {
+
+	 
+		runAudioOutput.draw();
+
+
+	}
+
+
 
 
 
 	//when camera button is pressed under the camera input from ImageInput 
 
-
-	
-
 }
 
-
-//--------------------------------------------------------------
-
-//--------------------------------------------------------------
-
-void ofApp::randomNumberGen() {
-
-	
-
-}
 
 //--------------------------------------------------------------
 
 void ofApp::keyPressed(int key){
 
+
 }
+
 
 //--------------------------------------------------------------
 void ofApp::keyReleased(int key){
@@ -182,13 +185,11 @@ void ofApp::mousePressed(int x, int y, int button){
 
 	continueClicked = ContinueBox.inside(x, y);
 
-
-
+	doneRecClick = doneRec.inside(x, y);
 }
 
 //--------------------------------------------------------------
 void ofApp::mouseReleased(int x, int y, int button){
-
 
 
 }

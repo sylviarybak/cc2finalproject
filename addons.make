@@ -1,3 +1,4 @@
 ofxAudioFile
+ofxCenteredTrueTypeFont
 ofxGui
 ofxSoundObjects
