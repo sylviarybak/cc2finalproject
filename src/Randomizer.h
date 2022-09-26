@@ -5,7 +5,7 @@
 #include "Captcha.h"
 #include "AudioInput.h"
 #include "ImageInput.h"
-#include "TuringQuestion.h"
+
 
 class Randomizer {
 
@@ -25,7 +25,7 @@ public: // place public functions or variables declarations here
 	Captcha runCaptcha;
 	AudioInput runAudioInput;
 	ImageInput runImageInput;
-	TuringQuestion runTuringQuestion;
+
 
 	int option;
 

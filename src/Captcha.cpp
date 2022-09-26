@@ -8,6 +8,8 @@ Captcha::Captcha() {
 void Captcha::setup() {
 	
 
+	moth1.load("moth1.png");
+
 }
 
 
@@ -19,7 +21,9 @@ void Captcha::update() {
 
 void Captcha::draw() {
 
-	ofBackground(173, 255, 47);
+	ofBackground(0);
+
+	moth1.draw(ofGetWidth() / 2 - 25, ofGetHeight() /2, 200, 200);
 
 
 }

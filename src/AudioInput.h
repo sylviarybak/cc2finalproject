@@ -6,7 +6,7 @@
 #include "waveformDraw.h"
 #include "ofxSoundRecorderObject.h"
 #include "ofxCenteredTrueTypeFont.h"
-#include "AudioOutput.h"
+
 
 
 
@@ -51,7 +51,7 @@ public: // place public functions or variables declarations here
 	ofSoundPlayer  player;
 	waveformDraw liveWave, recordedWave;
 
-	AudioOutput runAudioOutput;
+	ofxSoundRecorderObject recorder;
 
 private:
 };

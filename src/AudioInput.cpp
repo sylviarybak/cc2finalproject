@@ -33,7 +33,7 @@ void AudioInput::setup() {
 
 	player.load("notarobot.mp3");
 
-	runAudioOutput.setup();
+
 	
 
 }
@@ -44,7 +44,6 @@ void AudioInput::update() {
 	ofSoundUpdate();
 
 	
-	runAudioOutput.update();
 
 }
 
@@ -126,7 +125,6 @@ void AudioInput::playback() {
 	ofSetLineWidth(2);
 	ofDrawLine(p, r.getMinY(), p, r.getMaxY());
 	ofPopStyle();
-	
 
 
 }

@@ -30,7 +30,7 @@ float Randomizer::randomNum() {
 
 
 
-	return roundf(ofRandom(4)); //this inputs the random number
+	return roundf(ofRandom(2)); //this inputs the random number
 	
 
 	
@@ -58,13 +58,7 @@ float Randomizer::runSelection() {
 	
 
 	}
-	else if (randomNum() == 3) {
 
-	
-		return 3;
-
-
-	}
 
 
 
@@ -129,22 +123,6 @@ void Randomizer::vectorCheck(float runSelector)
 		}
 	}
 
-	else if (runSelector == 3) {
-
-		if (std::count(randomNums.begin(), randomNums.end(), 3.0) > 0) {
-
-			cout << "we had this one";
-
-		}
-		else {
-
-			drawSelector = 3;
-
-			randomNums.push_back(runSelector);
-
-			cout << "three";
-		}
-	}
 
 
 
@@ -154,7 +132,7 @@ void Randomizer::vectorCheck(float runSelector)
 
 void Randomizer::draw() {
 
-	runAudioInput.draw();
+	runCaptcha.draw();
 
 	//if (drawSelector == 0) {
 
@@ -169,11 +147,6 @@ void Randomizer::draw() {
 	//else if (drawSelector == 2) {
 
 	//runAudioInput.draw();
-	//}
-
-	//else if (drawSelector == 3) {
-
-	//runTuringQuestion.draw();
 	//}
 
 

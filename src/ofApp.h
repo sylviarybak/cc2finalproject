@@ -4,7 +4,6 @@
 #include "Captcha.h"
 #include "AudioInput.h"
 #include "ImageInput.h"
-#include "TuringQuestion.h"
 #include "Randomizer.h"
 #include "AudioOutput.h"
 
@@ -64,7 +63,6 @@ class ofApp : public ofBaseApp{
 		Captcha runCaptcha;
 		AudioInput runAudioInput;
 		ImageInput runImageInput;
-		TuringQuestion runTuringQuestion;
 		Randomizer runRandomizer;
 		AudioOutput runAudioOutput;
 
@@ -73,10 +71,16 @@ class ofApp : public ofBaseApp{
 
 		ofRectangle buttonRect;
 		ofRectangle audioRect;
+		ofRectangle yesAudio;
+
+
 		ofImage photoButton;
+		ofImage moth1;
+
 
 		bool photoButtonClick = false;
 		bool doneRecClick = false;
+		bool yesAudioClick = false;
 
 		bool Record = false;
 

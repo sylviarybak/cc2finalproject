@@ -8,6 +8,9 @@ void ofApp::setup(){
 	smallFont.load("rainyhearts.ttf", 22);
 	photoButton.load("photo.png");
 
+	moth1.load("moth1.png");
+
+	
 
 	start = "Before we start, please verify that you are not a robot";
 	iAmNot = "I am not a robot";
@@ -27,11 +30,12 @@ void ofApp::setup(){
 
 	doneRec.set(ofGetWidth() / 2 - 25, ofGetHeight() - 150, 80, 50);
 
+	yesAudio.set(ofGetWidth() / 2 - 150, ofGetHeight() / 2 + 100, 90, 50);
+
 
 	runRandomizer.setup();
-
-	
-
+	runAudioOutput.setup();
+	runCaptcha.setup();
 	
 }
 
@@ -40,6 +44,8 @@ void ofApp::update(){
 
 	runRandomizer.update();
 	runAudioInput.update();
+	runAudioOutput.update();
+	runCaptcha.update();
 
 }
 
@@ -56,6 +62,10 @@ void ofApp::draw() {
 	ofNoFill();
 	ofSetColor(100);
 	ofDrawRectangle(checkbox);
+
+	ofNoFill();
+	ofSetColor(0);
+	ofDrawRectangle(yesAudio);
 
 	ofSetColor(255);
 
@@ -131,10 +141,6 @@ void ofApp::draw() {
 		oneTimeOnly = true;
 	}
 
-	else {
-
-
-	}
 
 	if (doneRecClick) {
 
@@ -145,7 +151,34 @@ void ofApp::draw() {
 	}
 
 
+	if (yesAudioClick) {
+		ofBackground(0);
 
+		ofSetColor(255);
+		smallFont.drawString(somethingWrong, ofGetWidth() / 10 - 30, ofGetHeight() / 5);
+
+		ofFill();
+		ofSetColor(255);
+
+		ofDrawRectangle(ContinueBox);
+
+		ofSetColor(0);
+		smallFont.drawString(Continue, ofGetWidth() / 2 - 50, ofGetHeight() / 2 + 25);
+
+		oneTimeOnly = true;
+	}
+
+
+	if (doneRecClick) {
+
+
+		runAudioOutput.draw();
+
+
+	}
+
+
+	
 
 
 	//when camera button is pressed under the camera input from ImageInput 
@@ -186,6 +219,8 @@ void ofApp::mousePressed(int x, int y, int button){
 	continueClicked = ContinueBox.inside(x, y);
 
 	doneRecClick = doneRec.inside(x, y);
+
+	yesAudioClick = yesAudio.inside(x, y);
 }
 
 //--------------------------------------------------------------
