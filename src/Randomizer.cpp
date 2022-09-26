@@ -6,11 +6,11 @@ Randomizer::Randomizer(){
 
 void Randomizer::setup(){
 
-	runImageInput.setup(); // i have to run this here as well apparently
+	runImageInput.setup(); 
 
 	runAudioInput.setup();
 
-
+	runCaptcha.setup();
 
 	randomNums.push_back(5.0);
 
@@ -21,6 +21,7 @@ void Randomizer::update() {
 
 	runAudioInput.update(); // i have to run this here as well apparently
 
+	runCaptcha.update();
 
 	runImageInput.update();  // this too
 

@@ -8,9 +8,9 @@ void ofApp::setup(){
 	smallFont.load("rainyhearts.ttf", 22);
 	photoButton.load("photo.png");
 
+
 	moth1.load("moth1.png");
 
-	
 
 	start = "Before we start, please verify that you are not a robot";
 	iAmNot = "I am not a robot";
@@ -35,7 +35,7 @@ void ofApp::setup(){
 
 	runRandomizer.setup();
 	runAudioOutput.setup();
-	runCaptcha.setup();
+
 	
 }
 
@@ -45,7 +45,7 @@ void ofApp::update(){
 	runRandomizer.update();
 	runAudioInput.update();
 	runAudioOutput.update();
-	runCaptcha.update();
+
 
 }
 
@@ -176,12 +176,6 @@ void ofApp::draw() {
 
 
 	}
-
-
-	
-
-
-	//when camera button is pressed under the camera input from ImageInput 
 
 }
 
