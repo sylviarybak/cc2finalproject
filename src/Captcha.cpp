@@ -36,7 +36,6 @@ void Captcha::draw() {
 
 	ofSetColor(255);
 
-	ofRectangle(ofGetWidth() / 2 - 260, ofGetHeight() / 2 - 160, 520, 320);
 
 	smallFont.drawStringCentered(selectImage, ofGetWidth() / 2, ofGetHeight() / 8);
 
@@ -51,5 +50,8 @@ void Captcha::draw() {
 	moth6.draw(ofGetWidth() / 2 + 100, ofGetHeight() / 2 + 20, 160, 160);
 
 
+	ofSetColor(255);
+
+	
 
 }

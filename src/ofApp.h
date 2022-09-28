@@ -72,6 +72,7 @@ class ofApp : public ofBaseApp{
 		ofRectangle buttonRect;
 		ofRectangle audioRect;
 		ofRectangle yesAudio;
+		ofRectangle captchaRec;
 
 
 		ofImage photoButton;
@@ -81,6 +82,7 @@ class ofApp : public ofBaseApp{
 		bool photoButtonClick = false;
 		bool doneRecClick = false;
 		bool yesAudioClick = false;
+		bool captchaRecClick = false;
 
 		bool Record = false;
 

@@ -17,8 +17,10 @@ public: // place public functions or variables declarations here
 	ofTrueTypeFont smallFont;
 
 	ofRectangle buttonRect;
+	ofRectangle videoRect;
 
 	ofImage photoButton;
+	ofImage robotImage;
 
 	bool photoButtonClick = false;
 
@@ -27,6 +29,17 @@ public: // place public functions or variables declarations here
 	ofVideoGrabber vidGrabber;
 	int camWidth;
 	int camHeight;
+
+	int camWidthwithDist;
+	int camHeightwithDist;
+
+
+	string asciiCharacters;
+	ofTrueTypeFont videofont;
+
+	float elapsedTime;
+
+
 
 private:
 };

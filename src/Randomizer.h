@@ -17,6 +17,7 @@ public: // place public functions or variables declarations here
 	void update();
 	void options();
 	void vectorCheck(float runSelector);
+	void runAgain();
 
 	float randomNum();
 	float runSelection();

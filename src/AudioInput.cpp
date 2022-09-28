@@ -59,7 +59,7 @@ void AudioInput::draw() {
 
 	// Removes the elapsed time up until this point, so that the the count reset
 
-	if ((ofGetElapsedTimeMillis() - elapsedTime) > 6000) {
+	if ((ofGetElapsedTimeMillis() - elapsedTime) > 5000) {
 		
 		smallFont.drawStringCentered(pleaseSay, ofGetWidth() / 2, ofGetHeight() / 4);
 		smallFont.drawStringCentered(recordingInProgress, ofGetWidth() / 2, (ofGetHeight() / 2) + 120);

@@ -1,7 +1,7 @@
 #include "ofApp.h"
 
 //--------------------------------------------------------------
-void ofApp::setup(){
+void ofApp::setup() {
 
 
 	middleFont.load("rainyhearts.ttf", 26);
@@ -18,11 +18,11 @@ void ofApp::setup(){
 	Continue = "Continue";
 
 	frame.set(ofGetWidth() / 2 - 150, ofGetHeight() / 2 - 50, 300, 80);
-	checkbox.set(ofGetWidth() / 2 + 100 , ofGetHeight() / 2 - 20 , 20, 20);
+	checkbox.set(ofGetWidth() / 2 + 100, ofGetHeight() / 2 - 20, 20, 20);
 	checkboxFill.set(ofGetWidth() / 2 + 100, ofGetHeight() / 2 - 20, 20, 20);
 
-	
-	ContinueBox.set(ofGetWidth() / 2 - 70, ofGetHeight() / 2 - 10, 140, 50);
+
+	ContinueBox.set(ofGetWidth() / 2 - 70, ofGetHeight() / 2 + 180, 140, 50);
 	
 
 
@@ -31,6 +31,8 @@ void ofApp::setup(){
 	doneRec.set(ofGetWidth() / 2 - 25, ofGetHeight() - 150, 80, 50);
 
 	yesAudio.set(ofGetWidth() / 2 - 150, ofGetHeight() / 2 + 100, 90, 50);
+
+	captchaRec.set(ofGetWidth() / 2 - 260, ofGetHeight() / 2 - 160, 520, 320);
 
 
 	runRandomizer.setup();
@@ -107,7 +109,7 @@ void ofApp::draw() {
 		ofDrawRectangle(ContinueBox);
 
 		ofSetColor(0);
-		smallFont.drawString(Continue, ofGetWidth() / 2 - 50, ofGetHeight() / 2 + 25);
+		smallFont.drawString(Continue, ofGetWidth() / 2 - 50, ofGetHeight() / 2 + 210);
 		
 
 	}
@@ -138,6 +140,20 @@ void ofApp::draw() {
 	
 	if (photoButtonClick) {
 
+		ofBackground(0);
+
+		ofSetColor(255);
+		smallFont.drawString(somethingWrong, ofGetWidth() / 10 - 30, ofGetHeight() / 5);
+
+		ofFill();
+		ofSetColor(255);
+
+		ofDrawRectangle(ContinueBox);
+
+		ofSetColor(0);
+		smallFont.drawString(Continue, ofGetWidth() / 2 - 50, ofGetHeight() / 2 + 210);
+
+
 		oneTimeOnly = true;
 	}
 
@@ -163,7 +179,24 @@ void ofApp::draw() {
 		ofDrawRectangle(ContinueBox);
 
 		ofSetColor(0);
-		smallFont.drawString(Continue, ofGetWidth() / 2 - 50, ofGetHeight() / 2 + 25);
+		smallFont.drawString(Continue, ofGetWidth() / 2 - 50, ofGetHeight() / 2 + 210);
+
+		oneTimeOnly = true;
+	}
+
+	if (captchaRecClick) {
+		ofBackground(0);
+
+		ofSetColor(255);
+		smallFont.drawString(somethingWrong, ofGetWidth() / 10 - 30, ofGetHeight() / 5);
+
+		ofFill();
+		ofSetColor(255);
+
+		ofDrawRectangle(ContinueBox);
+
+		ofSetColor(0);
+		smallFont.drawString(Continue, ofGetWidth() / 2 - 50, ofGetHeight() / 2 + 210);
 
 		oneTimeOnly = true;
 	}
@@ -215,6 +248,8 @@ void ofApp::mousePressed(int x, int y, int button){
 	doneRecClick = doneRec.inside(x, y);
 
 	yesAudioClick = yesAudio.inside(x, y);
+
+	captchaRecClick = captchaRec.inside(x, y);
 }
 
 //--------------------------------------------------------------

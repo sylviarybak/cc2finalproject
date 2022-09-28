@@ -72,9 +72,10 @@ void Randomizer::vectorCheck(float runSelector)
 
 	if (runSelector == 0) {
 
-		if (std::count(randomNums.begin(), randomNums.end(), 0.0) > 0) {
+		if (std::count(randomNums.begin(), randomNums.end(), 0.0) > 0) {  // add AND NOT IN VECTOR
 
-			cout << "we had this one";
+	
+	
 
 		}
 		else {
@@ -92,7 +93,6 @@ void Randomizer::vectorCheck(float runSelector)
 
 		if (std::count(randomNums.begin(), randomNums.end(), 1.0) > 0) {
 
-			cout << "we had this one";
 
 		}
 		else {
@@ -109,7 +109,7 @@ void Randomizer::vectorCheck(float runSelector)
 
 		if (std::count(randomNums.begin(), randomNums.end(), 2.0) > 0) {
 
-			cout << "we had this one";
+	
 
 
 
@@ -124,6 +124,10 @@ void Randomizer::vectorCheck(float runSelector)
 		}
 	}
 
+	else {
+
+		//run again
+	}
 
 
 
@@ -133,21 +137,43 @@ void Randomizer::vectorCheck(float runSelector)
 
 void Randomizer::draw() {
 
+
+	if (drawSelector == 0) {
+
 	runCaptcha.draw();
+	}
 
-	//if (drawSelector == 0) {
+	else if (drawSelector == 1) {
 
-	//runCaptcha.draw();
-	//}
+	runImageInput.draw();
+	}
 
-	//else if (drawSelector == 1) {
+	else if (drawSelector == 2) {
 
-	//runImageInput.draw();
-	//}
+	runAudioInput.draw();
+	}
 
-	//else if (drawSelector == 2) {
 
-	//runAudioInput.draw();
+}
+
+void Randomizer::runAgain() {
+
+	// IF THE VECTOR DOES NOT CONTAIN 1 and 2 and 3 THEN RUN---- ELSE END 
+
+
+	//if (oneTimeOnly == true) {
+	//		runRandomizer.vectorCheck(randomNr);
+
+	//		oneTimeOnly = false;
+
+	//	}
+
+	//draw();
+
+	//else {
+
+	//	randomNr = runRandomizer.runSelection();
+
 	//}
 
 
